@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6 (35) - else</title>
+</head>
+<body>
+    Informe a temperatura do ambiente: <input type="number" id="input_temperatura"> <br>
+
+    <button onclick="verificarClima()">Verificar clima</button>
+
+    <div id="div_imagem"></div>
+</body>
+</html>
+
+<script>
+    function verificarClima() {
+        var temperatura = Number(input_temperatura.value);
+
+        if(temperatura < 10) {
+            div_imagem.innerHTML = `Apropriada p/ conservar alimento<br>
+            <img src="https://www.webrun.com.br/wp-content/uploads/2019/10/AdobeStock_128168805.jpeg" width="250px">`;
+        } else {
+            div_imagem.innerHTML = `Inapropriada p/ conservar alimento<br>
+            <img src="https://consultoradealimentos.com.br/wp-content/uploads/2016/08/cartilha_seguranca_alimentar_anvisa_img_23.jpg" width="250px">`;
+        }
+    }
+</script>

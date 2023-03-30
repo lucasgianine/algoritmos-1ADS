@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9 (69) - OR ||</title>
+</head>
+
+<style>
+    .alinhar {
+        display: flex;
+        justify-content: center;
+    }
+
+    .alinhar2 {
+        text-align: center;
+    }
+    body {
+        background-color:aquamarine;
+    }
+</style>
+
+<body>
+    <div class="alinhar">
+        <img class="img"
+            src="https://images.samsung.com/is/image/samsung/africa-pt-qled-q900r-row-qa82q900rbkxxa-rdynamicblack-thumb-160735083?$480_480_PNG$"
+            width="150px" alt="TV">
+    </div>
+
+    <h4 class="alinhar2">Dentre as marcas disponíveis:</h4> <br>
+    <div class="alinhar2">
+        <img src="https://logodownload.org/wp-content/uploads/2014/01/samsung-logo-4.png" width="75px" alt="Samsung">
+        <img src="https://logodownload.org/wp-content/uploads/2014/04/lg-logo-1.png" width="75px" alt="LG">
+        <img src="https://logodownload.org/wp-content/uploads/2017/04/mondial-logo-7.png" width="75px" alt="Mondial">
+        <img src="https://logodownload.org/wp-content/uploads/2017/04/britania-logo.png" width="75px" alt="Britânia">
+    </div> <br>
+
+    <div class="alinhar2">
+        <b>Informe a marca da sua TV:</b><br>
+        <input placeholder="Exemplo: LG" id="ipt_marca_TV"> <br>
+        <b>Informe o preço da TV:</b> <br>
+        <input type="number" placeholder="Exemplo: 4000" id="ipt_preco_TV"> <br>
+
+        <button onclick="analisar_compra()">Analisar compra</button><br><br>
+
+        <div id="divMensagem"></div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    function analisar_compra() {
+        var marca = ipt_marca_TV.value;
+        var preco = Number(ipt_preco_TV.value);
+
+        if (preco < 800 || preco > 2000) {
+            divMensagem.innerHTML = `TV fora da faixa de preço. <br>`;
+            if (preco < 800) {
+                divMensagem.innerHTML += "Preço baixo demais!";
+            } else {
+                divMensagem.innerHTML += "TV cara demais, infelizmente.";
+            }
+        } else if (marca == 'Mondial' || marca == 'Britânia') {
+            divMensagem.innerHTML = "Na faixa de preço, porém marca não confiável.";
+        } else {
+            divMensagem.innerHTML = "Essa TV pode entrar na sua lista!";
+        }
+    }
+</script>

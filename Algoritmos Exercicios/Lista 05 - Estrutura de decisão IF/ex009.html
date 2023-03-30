@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9 (25) - if</title>
+</head>
+<body>
+    <div>
+        <h3>Informe a última serie (SITCOM) que você assistiu:</h3>
+        <input id="iptSitcom" placeholder="EX: Brooklyn Nine-Nine"><br>
+
+        <h3>Informe o total de episódios que você assistiu da série:</h3>
+        <input type="number" placeholder="EX: 109" id="iptEps"><br>
+
+        <button onclick="verificarNivel()">Verificar nível</button>
+    </div>
+
+    <div id="divSerie"></div>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!");
+
+    function verificarNivel() {
+        var Serie = (iptSitcom.value);
+        var Eps = Number(iptEps.value);
+
+        var Horas = (Eps * 22) / 60;
+
+        divSerie.innerHTML = `Vejo que você gosta da série ${Serie}.<br>`;
+        if (Horas > 30) {
+            divSerie.innerHTML += `Uau, você realmente gosta dessa série!`;
+        }
+        Console.log("Calculo feito!");
+    }
+</script>

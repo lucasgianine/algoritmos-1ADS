@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9 (58) - and &&</title>
+</head>
+
+<body>
+    Informe seu nome: <input id="input_nome"> <br>
+    Informe sua altura: <input type="number" id="input_altura"> <br>
+    Informe a altura inicial: <input type="number" id="input_altura_inicial"> <br>
+    Informe a altura final: <input type="number" id="input_altura_final"> <br>
+
+    <button onclick="intervalo()">Verificar intervalo</button>
+</body>
+
+</html>
+
+<script>
+    function intervalo() {
+        var nome = input_nome.value;
+        var altura = Number(input_altura.value);
+
+        var altura_inicial = Number(input_altura_inicial.value);
+        var altura_final = Number(input_altura_final.value);
+
+        if (altura_inicial > 1 && altura_final > altura_inicial && altura < altura_final) {
+            alert(`O candidato ${nome} com a altura de ${altura} participará do processo de seleção.`);
+        } else {
+            alert(`Infelizmente o candidato ${nome} com a altura ${altura} não atende os requisitos.`)
+        }
+    }
+
+</script>

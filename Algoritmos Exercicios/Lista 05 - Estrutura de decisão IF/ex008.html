@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8 (24) - if</title>
+</head>
+<body>
+    <div>
+        <h3>Informe a quantidade de homens no elevador:</h3>
+        <input type="number" placeholder="EX: 4" id="iptHomem"><br>
+
+        <h3>Informe a quantidade de mulheres no elevador:</h3>
+        <input type="number" placeholder="EX: 4" id="iptMulher"><br>
+
+        <button onclick="analisarPeso()">Analisar peso</button>
+    </div>
+
+    <div id="divPeso"></div>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!");
+
+    function analisarPeso() {
+        var Homens = Number(iptHomem.value) * 80;
+        var Mulheres = Number(iptMulher.value) * 60;
+        var totalPeso = Homens + Mulheres;
+
+        divPeso.innerHTML = `Este elevador suporta 800Kg e o peso estimado desta lotação é de ${totalPeso}Kg.<br>`;
+
+        if (totalPeso > 800) {
+            divPeso.innerHTML += `<div style="color: red;">Será necessário descer alguém para que o elevador se movimente.</div>`;
+        }
+    }
+</script>

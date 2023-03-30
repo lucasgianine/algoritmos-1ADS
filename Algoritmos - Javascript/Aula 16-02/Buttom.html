@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Páginas e Botões - JP - Javascript</title>
+</head>
+
+<body>
+    
+    <h2>Minha primeira página com HTML!</h2>
+    <button onclick="darBoasVindas()" >
+        Dar Boas-Vindas
+    </button>
+
+    <h2>Manipulando campos de entrada</h2>
+    <input id="ipt_mensagem" />
+    <button onclick="exibirMensagem()">
+        Exiba sua mensagem
+    </button>
+
+</body>
+</html>
+
+<script>
+
+    console.log("Registrando mensagem no console ao iniciar a página.")
+    // Error, Warn também são usáveis. Mas de padrão, usar: .log
+
+    function darBoasVindas() /*Camel Case*/ {
+        alert("Seja bem-vindo!") // Caixinha de diálogo que fica em cima da tela, em forma de alerta.
+        
+    }
+
+    function exibirMensagem() {
+        alert("A mensagem digitada foi: " + ipt_mensagem.value)
+        console.log(ipt_mensagem.value)
+    }
+    
+// CTRL + ; para comentar o código.
+
+
+    </script>

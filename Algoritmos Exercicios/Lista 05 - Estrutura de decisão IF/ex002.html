@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2 (18) - if</title>
+</head>
+<style>
+    body {
+        background-color: azure;
+        text-align: center;
+    }
+
+</style>
+<body>
+    <div>
+        <h3>Quantas latinhas de refrigerante você toma por dia?</h3>
+        <input type="number" placeholder="EX: 1" id="iptRefri"><br>
+
+        <button onclick="verRefri()">Quantos refris?</button>
+    </div><br>
+
+    <div id="divImagem">
+        <img src="https://imagensemoldes.com.br/wp-content/uploads/2020/07/Refrigerante-PNG-1280x720.png" alt="Refrigerantes." width="220px">
+    </div>
+
+    <div id="divRefri"></div>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!");
+
+    function verRefri() {
+        var Refri = Number(iptRefri.value);
+        var qtdRefri = Refri * 365;
+
+        divRefri.innerHTML = `Você consome um total de ${qtdRefri} por ano.<br>`;
+
+        if (qtdRefri >= 500) {
+            divRefri.innerHTML += `Cuidado com a diabetes!`;
+        };
+        console.log("Calculado!");
+    }
+</script>

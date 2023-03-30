@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11 (60) - and &&</title>
+</head>
+
+<body>
+    Informe a quantidade de passagens que deseja adquirir: <input type="number" id="input_passagem"> <br>
+
+    <button onclick="comprar()">Comprar</button>
+
+    <p id="p_mensagem"></p>
+</body>
+
+</html>
+
+<script>
+    function comprar() {
+        var quantidade = Number(input_passagem.value);
+        var passagem = quantidade * 4.40;
+
+        if (quantidade >= 8 && quantidade <= 50) {
+            if (quantidade <= 19) {
+                var novaPassagem = passagem * 0.97;
+                p_mensagem.innerHTML = `Total a pagar: R$${novaPassagem}`;
+            } else if (quantidade >= 20 && quantidade <= 49) {
+                var novaPassagem = passagem * 0.95;
+                p_mensagem.innerHTML = `Total a pagar: R$${novaPassagem}`;
+            } else if (quantidade == 50) {
+                var novaPassagem = passagem * 0.93;
+                p_mensagem.innerHTML = `Total a pagar: R$${novaPassagem}`;
+            } else {
+                p_mensagem.innerHTML = "Quantidade inválida para o Fidelidade";
+            }
+        }
+    }
+</script>

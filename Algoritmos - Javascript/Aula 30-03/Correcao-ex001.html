@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correção do EX001 VAR GLOBAL</title>
+</head>
+<body>
+    <img 
+    id="img_carro"
+    src="https://img.olx.com.br/images/05/059394370028888.jpg"
+    style="width: 200px;">
+
+    <button onclick="aumentar_largura()">
+        Aumentar a largura
+    </button>
+    <button onclick="reduzir_largura()">
+        Reduzir a largura
+    </button>
+</body>
+</html>
+
+<script>
+    var largura = 200;
+
+    function aumentar_largura() {
+        largura += 10;
+        img_carro.style.width = largura + "px";
+    }
+
+    function reduzir_largura() {
+        largura -= 10;
+        img_carro.style.width = largura + "px";
+    }
+</script>

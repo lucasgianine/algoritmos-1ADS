@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7 | Caio - Javascript</title>
+</head>
+<body>
+    <h3>
+        Economizando!
+    </h3>
+
+    <h4>
+        Digite quanto é o valor da sua passagem (única):
+    </h4>
+    <input type="number" id="ipt_valorPassagem"/>
+
+    <h4>
+        Digite quantas viagens você fará no mês:
+    </h4>
+    <input type="number" id="ipt_viagens"/><br/>
+
+    <button onclick="verEconomia()">
+        Ver economia
+    </button>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!");
+
+    function verEconomia() {
+        var ECONOMIA = (Number(ipt_valorPassagem.value) * Number(ipt_viagens.value)) / 2;
+
+        alert("Você vai economizar R$" + ECONOMIA);
+        console.log("Calculo realizado.");
+    }
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3 (10) | innerHTML</title>
+</head>
+
+<style>
+    #principal {
+        text-align: center;
+    }
+    #div_mensagem
+    {
+        text-align: center;
+    }
+    #img {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<body>
+
+    <div id="principal">
+
+        <h3>Digite quantas horas você dormiu:</h3>
+        <input id="iptSono"/><br>
+
+        <button id="" onclick="sono()">
+            Calcular Sono
+        </button><br>
+
+    </div>
+
+    <div id="img">
+        <img src="https://www.pngmart.com/files/7/Sleep-PNG-Clipart.png" alt="Ilustração de sono." width="200px">
+    </div>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function sono() {
+        var F1 = (Number(iptSono.value) * 5) / 100;
+        var F2 = (Number(iptSono.value) * 45) / 100;
+        var F3 = (Number(iptSono.value) * 30) / 100;
+        var FR = (Number(iptSono.value) * 20) / 100;
+
+        var Texto = `Suas horas dormidas na fase `;
+
+        div_mensagem.innerHTML = Texto + `1 foi de ${F1}.` + "<br>";
+        div_mensagem.innerHTML += Texto + `2 foi de ${F2}.` + "<br>";
+        div_mensagem.innerHTML += Texto + `3 foi de ${F3}.` + "<br>";
+        div_mensagem.innerHTML += Texto + `REM foi de ${FR}.` + "<br>";
+        
+    }
+</script>

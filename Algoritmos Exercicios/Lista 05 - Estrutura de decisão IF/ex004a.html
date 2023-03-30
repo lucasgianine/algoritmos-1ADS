@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4 (20) - a - if</title>
+</head>
+
+<style>
+    body {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div id="divPrimaria">
+        <h3>Informe o valor da pizza:</h3>
+        <input type="number" placeholder="EX: 60" id="iptPizza"><br>
+
+        <h3>Informe a quantidade de amigos:</h3>
+        <input type="number" placeholder="EX: 3" id="iptAmigos"><br><br>
+
+        <button onclick="valorPizza()">Rola a pizza?</button>
+    </div><br><br>
+
+    <div>
+        <img src="https://static.vecteezy.com/system/resources/previews/009/384/620/original/fresh-pizza-and-pizza-box-clipart-design-illustration-free-png.png" alt="Pizzazinha!" width="120px">
+    </div>
+
+    <div id="divPizza"></div>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!");
+
+    function valorPizza() {
+        var Valor = Number(iptPizza.value);
+        var Amigos = Number(iptAmigos.value);
+
+        var Total = Valor / Amigos;
+
+        divPizza.innerHTML = `Cada amigo vai pagar R$${Total} pela pizza.<br>`;
+
+        if (Total > 20) {
+            divPizza.innerHTML += `<b style="color: red;"><i>Deu ruim! Pizza muito cara!</b></i>`;
+        };
+
+        console.log("Calculo realizado!");
+    }
+</script>

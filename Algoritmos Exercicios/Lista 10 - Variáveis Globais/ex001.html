@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 (70) - Var Global</title>
+</head>
+<body>
+    <div id="divImg" style="display: flex; justify-content: center;"><img src="https://img.freepik.com/fotos-gratis/cachorro-fofo-usando-oculos_23-2148917262.jpg" width="100"></div> <br>
+
+    <div style="display: flex; justify-content: center;">
+        <button onclick="aumentar_largura()">Aumentar a largura</button>
+        <button onclick="reduzir_largura()">Reduzir a largura</button>
+    </div>
+</body>
+</html>
+
+<script>
+    var pixels = 100;
+
+    function aumentar_largura() {
+        pixels += 10;
+
+        divImg.innerHTML = `<img src="https://img.freepik.com/fotos-gratis/cachorro-fofo-usando-oculos_23-2148917262.jpg" width="${pixels}">`;
+        
+    }
+
+    function reduzir_largura() {
+        pixels -= 10;
+
+        divImg.innerHTML = `<img src="https://img.freepik.com/fotos-gratis/cachorro-fofo-usando-oculos_23-2148917262.jpg" width="${pixels}">`;
+    }
+</script>

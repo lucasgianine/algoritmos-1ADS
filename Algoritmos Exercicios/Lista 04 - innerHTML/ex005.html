@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5 (12) | innerHTML</title>
+</head>
+<style>
+    #divPrimaria {
+        text-align: center;
+    }
+    #div_tabuada {
+        text-align: center;
+    }
+    #imagemMat {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+<body>
+    <div id="divPrimaria">
+        <h3>Digite um número:</h3>
+        <input type="number" id="ipt_numero"><br>
+
+        <button onclick="verTabuada()">Ver tabuada</button>
+    </div>
+
+    <div id="imagemMat">
+        <img src="https://cdn-icons-png.flaticon.com/512/4524/4524590.png" alt="Imagem de matemática." width="120px">
+    </div>
+
+    <div id="div_tabuada"></div>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!")
+    
+    function verTabuada() {
+        var num = Number(ipt_numero.value);
+        
+        div_tabuada.innerHTML = `${num} x 1 = ${num * 1}<br>`
+        div_tabuada.innerHTML += `${num} x 2 = ${num*2}<br>`
+        div_tabuada.innerHTML += `${num} x 3 = ${num*3}<br>`
+        div_tabuada.innerHTML += `${num} x 4 = ${num*4}<br>`
+        div_tabuada.innerHTML += `${num} x 5 = ${num*5}<br>`
+        div_tabuada.innerHTML += `${num} x 6 = ${num*6}<br>`
+        div_tabuada.innerHTML += `${num} x 7 = ${num*7}<br>`
+        div_tabuada.innerHTML += `${num} x 8 = ${num*8}<br>`
+        div_tabuada.innerHTML += `${num} x 9 = ${num*9}<br>`
+        div_tabuada.innerHTML += `${num} x 10 = ${num*10}`
+
+        console.log("Multiplicação feita!")
+    }
+</script>

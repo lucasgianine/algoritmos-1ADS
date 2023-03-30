@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9 (49) - else if</title>
+</head>
+<body>
+    Informe sua meta de economia: <input type="number" id="input_meta_economia"> <br>
+
+    Informe quanto você tem guardado: <input type="number" id="input_quantia_guardada"> <br>
+
+    <button onclick="analisarEconomia()">Analisar economia</button>
+
+    <p id="p_mensagem"></p>
+</body>
+</html>
+
+<script>
+    function analisarEconomia() {
+        var meta_economia = Number(input_meta_economia.value);
+        var quantia_guardada = Number(input_quantia_guardada.value);
+
+        var calculo_meta = meta_economia - quantia_guardada;
+
+        if (quantia_guardada == meta_economia) {
+            p_mensagem.innerHTML = "Parabéns, meta alcançada!";
+        } else if (quantia_guardada > meta_economia) {
+            p_mensagem.innerHTML = `Meta ultrapassada em ${quantia_guardada - meta_economia}`;
+        } else {
+            p_mensagem.innerHTML = `Força! Ainda em busca da meta! Falta ${calculo_meta}`
+        }
+    }
+</script>

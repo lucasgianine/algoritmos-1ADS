@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3 (72) - Var Global</title>
+</head>
+
+<body>
+    <div id="div_mensagem"></div> <br>
+
+    <button onclick="depositar_meio()" style="color: green;">Depositar R$0,50</button>
+    <button onclick="depositar_dois()" style="color: green;">Depositar R$2,00</button>
+    <button onclick="retirar_meio()" style="color: red;">Retirar R$0,50</button>
+    <button onclick="retirar()" style="color: red;">Retirar</button>
+</body>
+
+</html>
+
+<script>
+    var cofre = 0;
+    var deposito = 0;
+    var saque = 0;
+
+    div_mensagem.innerHTML = `
+        <div style="color: blue;">
+        Total guardado no cofrinho: <b>R$${cofre}</b><br>
+        Depósitos efetuados: <b>${deposito}</b><br>
+        Retiradas efetuadas: <b>${saque}</b><br></div>
+        `;
+
+    function depositar_meio() {
+        cofre += 0.50;
+        deposito++;
+
+        div_mensagem.innerHTML = `
+        <div style="color: blue;">
+        Total guardado no cofrinho: <b>R$${cofre}</b><br>
+        Depósitos efetuados: <b>${deposito}</b><br>
+        Retiradas efetuadas: <b>${saque}</b><br></div>
+        `;
+    }
+
+    function depositar_dois() {
+        cofre += 2;
+        deposito++;
+
+        div_mensagem.innerHTML = `
+        <div style="color: blue;">
+        Total guardado no cofrinho: <b>R$${cofre}</b><br>
+        Depósitos efetuados: <b>${deposito}</b><br>
+        Retiradas efetuadas: <b>${saque}</b><br></div>
+        `;
+    }
+
+    function retirar_meio() {
+        cofre -= 0.50;
+        saque++;
+
+        div_mensagem.innerHTML = `
+        <div style="color: blue;">
+        Total guardado no cofrinho: <b>R$${cofre}</b><br>
+        Depósitos efetuados: <b>${deposito}</b><br>
+        Retiradas efetuadas: <b>${saque}</b><br></div>
+        `;
+    }
+
+    function retirar() {
+        cofre -= cofre;
+        saque++;
+
+        div_mensagem.innerHTML = `
+        <div style="color: blue;">
+        Total guardado no cofrinho: <b>R$${cofre}</b><br>
+        Depósitos efetuados: <b>${deposito}</b><br>
+        Retiradas efetuadas: <b>${saque}</b><br></div>
+        `;
+    }
+</script>

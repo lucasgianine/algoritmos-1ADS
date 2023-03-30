@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4 (33) - else</title>
+</head>
+<body>
+    Informe a frequência do aluno: <input type="number" id="input_freq_aluno"> <br>
+
+    <button onclick="analisarFreq()">Analisar frequência</button>
+
+    <div id="div_imagem"></div>
+</body>
+</html>
+
+<script>
+    function analisarFreq() {
+        var Freq = Number(input_freq_aluno.value);
+
+        if(Freq < 50) {
+            div_imagem.innerHTML = `<img src="https://thumbs.dreamstime.com/b/turista-masculino-com-trouxa-que-toma-uma-imagem-com-c%C3%A2mera-36215885.jpg" width="350px">`
+        } else {
+            div_imagem.innerHTML = `<img src="https://media.istockphoto.com/id/918803166/pt/foto/studious-girl-reading-a-book-in-a-library.jpg?s=170667a&w=0&k=20&c=-FGPoYjtH9n2_IZyN9WLvxxR818l5SxYdglNwB040Y0=" width"150px">`
+        }
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2 (62) - OR ||</title>
+</head>
+<body>
+    Informe sua nota do ENEM: <input id="input_ENEM" type="number"> <br>
+    Informe sua nota do vestibular interno: <input type="number" id="input_vestibular"> <br>
+
+    <button onclick="avaliacao()">Avaliação</button>
+</body>
+</html>
+
+<script>
+    function avaliacao() {
+        var ENEM = Number(input_ENEM.value);
+        var vestibular = Number(input_vestibular.value);
+
+        if(ENEM >= 800 || vestibular >= 700) {
+            alert("Parabéns! Aprovado");
+        } else {
+            alert("Tente semestre que vem!");
+        }
+
+    }
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 (17) - if</title>
+</head>
+<style>
+    body {
+        background-color: yellow;
+    }
+</style>
+<body>
+    <div id="divPrimaria">
+        <h3>Informe a sua idade:</h3>
+        <input type="number" placeholder="EX: 17" id="input_idade"><br>
+
+        <button onclick="verIdade()">Ir para festa</button>
+    </div><br>
+
+    <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384644.png" alt="Chapéuzinho de festa." width="100px">
+    </div>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!");
+
+    function verIdade() {
+        var valorIdade = Number(input_idade.value);
+
+        if(valorIdade < 18) {
+            alert("Pedir permissão pro responsável.");
+        };
+
+        alert("#partiuFesta !!!");
+
+        console.log("IF funcionou.");
+    }
+</script>

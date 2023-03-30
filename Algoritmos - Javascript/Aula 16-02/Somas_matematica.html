@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somas matemáticas | Caio - Javascript</title>
+</head>
+
+<body>
+    Primeiro Número:
+    <input type="number" id="input_n1"/>
+    Segundo Número:
+    <input type="number" id="input_n2"/>
+
+    <br/>
+    
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="somar()">Somar</button>
+</body>
+
+</html>
+
+<script>
+    function multiplicar() {
+        alert(Number(input_n1.value) * Number(input_n2.value));
+        console.log("Multiplicação feita.");
+    }
+    function dividir() {
+        alert(Number(input_n1.value) / Number(input_n2.value));
+        console.log("Divisão feita.");
+    }
+    function subtrair() {
+        alert(Number(input_n1.value) - Number(input_n2.value));
+        console.log("Subtração feita.");
+    }
+    function somar() {
+        alert(Number(input_n1.value) + Number(input_n2.value));
+        console.log("Soma feita.");
+    }
+</script>

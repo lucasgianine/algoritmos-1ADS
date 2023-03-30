@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8 (40) - else</title>
+</head>
+<body>
+    Informe a quantidade de homens no elevador: <input type="number" id="input_homem"> <br>
+    Informe a quantidade de mulheres no elevador: <input type="number" id="input_mulher"> <br>
+
+    <button onclick="ligarElevador()">Ligar elevador</button>  
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function ligarElevador() {
+        var homem = Number(input_homem.value) * 90;
+        var mulher = Number(input_mulher.value) * 70;
+        var peso_total = homem + mulher;
+        
+        var perda_peso = peso_total - 500;
+
+        if(peso_total < 500) {
+            div_mensagem.innerHTML = `<div style="color: green;">Elevador vai se mover, pois está com ${peso_total}kg</div>`;
+        } else {
+            div_mensagem.innerHTML = `<div style="color: red;">Alguém precisa descer. Precisa perder ${perda_peso}kg para mover o elevador</div>`;
+        }
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7 (38) - Refazendo 12 com else</title>
+</head>
+<body>
+    <div>
+        <h3>Informe o peso total do elevador:</h3>
+        <input type="number" placeholder="EX: 80" id="input_peso"><br>
+
+        <button onclick="ligarElevador()">Ligar elevador</button>
+    </div>
+</body>
+</html>
+
+<script>
+    function ligarElevador() {
+        var Peso = Number(input_peso.value);
+
+        if (Peso < 500) {
+            alert("Elevador vai se mover!");
+        } else {
+            alert("Alguém precisa descer do elevador!");
+        }
+    }
+</script>

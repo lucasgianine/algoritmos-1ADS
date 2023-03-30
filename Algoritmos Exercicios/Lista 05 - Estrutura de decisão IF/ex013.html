@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13 (29) - if</title>
+</head>
+<body>
+    <div>
+        <h3>Informe a primeira nota:</h3>
+        <input type="number" placeholder="EX: 7" id="input_nota1">
+
+        <h3>Informe a segunda nota:</h3>
+        <input type="number" placeholder="EX: 6.5" id="input_nota2"><br>
+
+        <button onclick="verificarMedia()">Verificar situação</button><br>
+    </div>  
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!");
+
+    function verificarMedia() {
+        var N1 = Number(input_nota1.value);
+        var N2 = Number(input_nota2.value);
+
+        var Media = (N1 + N2) / 2;
+
+        if (Media >= 6) {
+            alert("Parabéns, aprovado!");
+        }
+        if (Media < 6) {
+            alert("Tente outra vez...")
+        }
+        
+        console.log("Calculado.")
+    }
+</script>

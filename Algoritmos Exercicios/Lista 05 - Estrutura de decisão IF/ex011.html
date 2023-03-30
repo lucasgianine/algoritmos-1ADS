@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11 (27) - if</title>
+</head>
+<body>
+    <div>
+        <h3>Informe a quantidade de filhos que você tem:</h3>
+        <input type="number" placeholder="EX: 2" id="input_qtdFilhos"><br>
+
+        <button onclick="analisarFamilia()">Analisar familia</button><br>
+    </div>
+
+    <div id="divFilhos"></div>
+</body>
+</html>
+
+<script>
+    function analisarFamilia() {
+        var Filhos = Number(input_qtdFilhos.value);
+
+        if(Filhos < 0) {
+            divFilhos.innerHTML = `Digite um número válido.`;
+        }
+
+        if(Filhos == 0) {
+            divFilhos.innerHTML = `Sortudo!!!`;
+        }
+
+        if(Filhos >= 1) {
+            divFilhos.innerHTML = `Não tem TV<br>`;
+            if(Filhos >=2) {
+                divFilhos.innerHTML += `Não tem internet<br>`;
+                if(Filhos >= 3) {
+                    divFilhos.innerHTML += `Não tem vídeo-game<br>`;
+                    if(Filhos >= 4) {
+                        divFilhos.innerHTML += `Não tem Netflix<br>`;
+                    }
+                }
+            }
+        }
+
+        if(Filhos >= 6) {
+            divFilhos.innerHTML = `Calma lá, meu querido(a)`;
+        }
+    }
+</script>

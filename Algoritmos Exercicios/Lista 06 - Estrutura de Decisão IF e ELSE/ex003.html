@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3 (32) - else</title>
+</head>
+<body>
+    Informe a quantidade de chocolates comprados: <input type="number" id="input_qtd_chocolate"> <br>
+
+    <button onclick="comprar()">Comprar</button>
+
+    <p id="p_mensagem"></p>
+</body>
+</html>
+
+<script>
+    function comprar() {
+        var qtd_chocolate = Number(input_qtd_chocolate.value);
+
+        var preco_final = 0;
+
+        if (qtd_chocolate <= 12) {
+            preco_final = qtd_chocolate * 3;
+        } else {
+            preco_final = qtd_chocolate * 2.50;
+        }
+
+        p_mensagem.innerHTML = `O valor da sua compra foi de R$${preco_final}`;
+    }
+</script>

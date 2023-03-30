@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2 (42) - else if</title>
+</head>
+<body>
+    Informe a renda familiar mensal: <input type="number" id="input_renda_mensal">
+
+    <button onclick="analisarRenda()">Analisar Renda</button> <br>
+
+    <p id="p_mensagem"></p>
+</body>
+</html>
+
+<script>
+    function analisarRenda() {
+        var renda_mensal = Number(input_renda_mensal.value);
+
+        if (renda_mensal < 250) {
+            p_mensagem.innerHTML = "Classe E";
+        } else if (renda_mensal < 900) {
+            p_mensagem.innerHTML = "Classe D";
+        } else if (renda_mensal < 2500) {
+            p_mensagem.innerHTML = "Classe C";
+        } else if (renda_mensal < 9500) {
+            p_mensagem.innerHTML = "Classe B";
+        } else {
+            p_mensagem.innerHTML = "Classe A";
+        }
+    }
+</script>

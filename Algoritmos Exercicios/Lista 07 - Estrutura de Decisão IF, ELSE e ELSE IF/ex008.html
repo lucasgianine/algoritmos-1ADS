@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8 (48) - else if</title>
+</head>
+<body>
+    Quantos pães francês você tem comido por dia?
+    <input type="number" id="input_paes_ingerido"> <br>
+    Quantos pacotes de bolacha recheada você tem comido por dia?
+    <input type="number" id="input_pacote_ingerido"> <br>
+    Quantos copos de achocolatado você tem tomado por dia?
+    <input type="number" id="input_copo_bebido"> <br>
+
+    <button onclick="verificarCalorias()">Verificar calorias</button> <br>
+
+    <p id="p_mensagem"></p>
+</body>
+</html>
+
+<script>
+    function verificarCalorias() {
+        var paes = Number(input_paes_ingerido.value) * 50;
+        var pacote_bolacha = Number(input_pacote_ingerido.value) * 80;
+        var copo_achocolatado = Number(input_copo_bebido.value) * 70;
+
+        var calorias = paes + pacote_bolacha + copo_achocolatado;
+
+        if (calorias < 200) {
+            p_mensagem.innerHTML = "Parabéns, vai sair em forma da quarentena!";
+        } else if (calorias < 400) {
+            p_mensagem.innerHTML = 'Cuidado, vai ficar mais "fofinho(a)" após quarentena!';
+        } else {
+            p_mensagem.innerHTML = "Bom, acho que muitos não vão te reconhecer após a quarentena"
+        }
+    }
+</script>

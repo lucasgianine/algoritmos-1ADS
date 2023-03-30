@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6 (46) - else if</title>
+</head>
+<body>
+    Qual o maior time de São Paulo? <input id="input_time_grande">
+
+    <button onclick="analisarTime()">Fale sobre esse time</button> <br>
+
+    <p id="p_mensagem"></p>
+</body>
+</html>
+
+<script>
+    function analisarTime() {
+        var time_grande = input_time_grande.value;
+
+        if (time_grande == "corinthians") {
+            p_mensagem.innerHTML = `<p style="background: black; color: white;"> Salve o corinthias (Porque precisam)</p>`
+        } else if (time_grande == "palmeiras") {
+            p_mensagem.innerHTML = `<p style="background: green; color: white;">Viva o alviverde imponente!</p>`
+        } else if (time_grande == "santos") {
+            p_mensagem.innerHTML = `<p style="background: white; color: black;">Agora quem dá a bola é o Santos!</p>`
+        } else {
+            p_mensagem.innerHTML = `<p style="background: black; color: red;">Salve o Tricolor paulista!</p>`
+        }
+    }
+</script>

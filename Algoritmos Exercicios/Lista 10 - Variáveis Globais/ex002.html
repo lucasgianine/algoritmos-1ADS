@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2 (71) - Var Global</title>
+</head>
+<body>
+    Informe o seu salário: <input type="number" id="input_salario"> <br>
+
+    <button onclick="calcular_grana()">Calcular salário</button>
+    <button onclick="pagar_100()">Pagar conta de R$100</button>
+    <button onclick="pagar_500()">Pagar conta de R$500</button>
+    <button onclick="ganhar_loteria()">Ganhar R$2000 na loteria</button> <br>
+
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    var salario = 0;
+
+    function calcular_grana() {
+        salario = Number(input_salario.value);
+        div_mensagem.innerHTML = `Grana atual: ${salario}`; 
+    }
+
+    function pagar_100() {
+        salario -= 100;
+        div_mensagem.innerHTML = `Grana atual: ${salario}`;
+    }
+
+    function pagar_500() {
+        salario -= 500;
+        div_mensagem.innerHTML = `Grana atual: ${salario}`;
+    }
+
+    function ganhar_loteria() {
+        salario += 2000;
+        div_mensagem.innerHTML = `Grana atual: ${salario}`;
+    }
+
+</script>

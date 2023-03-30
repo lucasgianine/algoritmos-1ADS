@@ -1,0 +1,49 @@
+<!-- a) Tenha o campo "Cidade Natal" 
+b) Tenha o campo "Ano de nascimento"
+c) Tenha o botão "Cadastrar" 
+d) Ao clicar no botão, deve aparecer 1 (um) alert com a frase:
+"Você nasceu na cidade de X em Y
+Onde X é o valor do campo em a) e Y é o valor do campo em b)" -->
+
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 - Algoritmos</title>
+</head>
+
+<body>
+    <h1>
+        Faça seu cadastro:
+    </h1>
+
+    <h3>
+        a) Digite sua cidade natal:
+    </h3>
+    <input id="ipt_cidadeNatal" />
+
+    <h3>
+        b) Digite sua data de nascimento:
+    </h3>
+    <input id="ipt_nascimento" />
+
+    <h3>
+        Finalize seu cadastro:
+    </h3>
+
+    <button onclick="cadastrarSe()">
+        Cadastrar-se
+    </button>
+</body>
+
+</html>
+<script>
+    console.log("Estamos funcionando.")
+
+    function cadastrarSe() {
+        alert("Você nasceu na cidade de "+ipt_cidadeNatal.value+" em "+ipt_nascimento.value)
+        console.log("a) "+ipt_cidadeNatal.value, "b) "+ipt_nascimento.value)
+    }
+</script>

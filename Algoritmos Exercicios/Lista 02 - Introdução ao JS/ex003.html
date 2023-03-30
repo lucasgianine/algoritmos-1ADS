@@ -1,0 +1,49 @@
+<!-- 3. Crie uma página que solicite ao usuário que digite o nome do time que torce 
+e quantos mundiais de clube ele. 
+a) Deve haver um botão com o texto "Amo meu time". 
+b) Ao clicar no botão, deve aparecer uma frase como está numa caixinha de alerta: 
+"O time X tem Y mundiais da FIFA"  - Onde X e Y são os valores que o 
+usuário digitou, claro -->
+
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3 - Algoritmos</title>
+</head>
+
+<body>
+    <h1>
+        Futebol... Polêmicas... Mundiais...
+    </h1>
+    <h6>(Palmeiras tem mundial sim, mas a FIFA não assume!!!!!!!!)</h6>
+
+    <h3>
+        Digite o nome do time que você torce:
+    </h3>
+    <input id="i_nomeTime" />
+
+    <h3>
+        Digite quantos mundiais seu time tem:
+    </h3>
+    <input id="i_mundialFifa" />
+
+    <h3>
+        Será o maior do Brasil? Não sei, apenas clique:
+    </h3>
+    <button onclick="timeCoracao()">
+        Amo meu time!
+    </button>
+</body>
+
+</html>
+
+<script>
+    function timeCoracao() {
+        alert("O seu time "+i_nomeTime.value+" tem "
+        +i_mundialFifa.value+" mundial(is) pela FIFA.")
+        console.log("a) "+i_nomeTime.value+"b) "+i_mundialFifa.value)
+    }
+</script>

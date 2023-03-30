@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4 (64) - OR ||</title>
+</head>
+
+<body>
+
+    Dentre as seguintes formas de pagamento: <br>
+    Dinheiro - Cartão de débito - Cartão de crédito - Boleto <br>
+
+    Informe a forma de pagamento: <br>
+
+
+    <input id="input_forma_pagamento"> <br>
+
+    <button onclick="analisar_compra()">Analisar compra!</button> <br>
+
+    <p id="p_mensagem"></p>
+</body>
+
+</html>
+
+<script>
+    function analisar_compra() {
+        var formaPagamento = input_forma_pagamento.value;
+
+        if (formaPagamento == "Débito" || formaPagamento == "Dinheiro") {
+            p_mensagem.innerHTML = "Você terá que pagar a vista";
+        } else {
+            p_mensagem.innerHTML = "Pagamento poderá ser parcelado";
+        }
+    }
+</script>

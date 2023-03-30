@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpolação</title>
+</head>
+<body>
+    <h3>Digite o nome do seu guerreiro:</h3>
+    <input id="iptNome"/><br/>
+
+    <h3>Digite o seu Ki ("Força"):</h3>
+    <input type="number" id="iptKi"/><br/>
+
+    <h3>Veja seu Ki:</h3>
+    <button onclick="verKi()">Ver Ki</button><br/>
+
+    <div style="color:red" id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!")
+
+    function verKi() {
+        var Nome_guerreiro = iptNome.value;
+
+        var Ki = Number(iptKi.value);
+
+        var Supersj1 = Ki * 50;
+        var Supersj2 = Ki * 100;
+
+        // Interpolação
+        var Texto = `Olá guerreiro ${Nome_guerreiro}, seu ki é de: `
+
+        // Concatenação
+        //alert(Texto + Supersj1);
+        //alert(Texto + Supersj2);
+
+        //Exibindo na div:
+        div_mensagem.innerHTML = Texto + Supersj1 + "<br>";
+        div_mensagem.innerHTML += Texto + Supersj2;
+
+        console.log("Feito!");
+    }
+
+</script>

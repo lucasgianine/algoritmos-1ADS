@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: blanchedalmond;
+    }
+</style>
+
+<body>
+    <div>
+        <h3>Informe seu time:</h3>
+        <input id="input_time"><br>
+
+        <button onclick="mostrar_mensagem()">Validar time</button>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function mostrar_mensagem() {
+        var timeUsuario = input_time.value;
+
+        if (timeUsuario == "Palmeiras") {
+            alert("Maior do Brasil.");
+        }
+        if (timeUsuario != "Palmeiras") {
+            alert("Palmeiras é maior que seu time.")
+        }
+
+
+        alert("#partiuEstadio")
+    }
+</script>

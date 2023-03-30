@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7 (23) - if</title>
+</head>
+<body>
+    <div>
+        <h3>Informe o saldo da conta:</h3>
+        <input type="number" placeholder="EX: 1000" id="iptSaldoConta"><br>
+
+        <h3>Informe o valor do débito:</h3>
+        <input type="number" placeholder="EX: 500" id="iptValorDebito"><br>
+
+        <button onclick="analisarConta()">Analisar conta</button>
+    </div>
+
+    <div id="divConta"></div>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!");
+
+    function analisarConta() {
+        var Saldo = Number(iptSaldoConta.value);
+        var Debito = Number(iptValorDebito.value);
+
+        var Valor = Saldo - Debito;
+
+        divConta.innerHTML = `O saldo atual da conta corrente é R$${Valor}`;
+
+        if(Valor < 0) {
+            divConta.innerHTML = `<b style="color: red;">O saldo atual da conta corrente é R$${Valor}</b>`;;
+        }
+    }
+</script>

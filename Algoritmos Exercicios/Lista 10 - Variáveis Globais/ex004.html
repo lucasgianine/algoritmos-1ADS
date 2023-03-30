@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4 (73) - Var Global</title>
+</head>
+<body>
+    <button onclick="mover_esquerda()">Mover p/Esquerda</button>
+    <button onclick="mover_direita()">Mover p/Direita</button>
+    Quantos pixels: <input type="number" id="input_pixels"> <br>
+
+    <img
+    id="img_bart"
+    src="https://www.purarteadesivos.com.br/wp-content/uploads/2017/05/Bart-simpson-skate.png"
+    alt="Bart Simpson num skate radical eu voltaria com a minha ex"
+    style="width: 120px; margin-left: auto;">
+</body>
+</html>
+
+<script>
+    var pixels = 0;
+
+    function mover_esquerda() {
+        pixels -= Number(input_pixels.value);
+
+        img_bart.style.marginLeft = pixels + "px";
+    }
+
+    function mover_direita() {
+        pixels += Number(input_pixels.value);
+        
+        img_bart.style.marginLeft = pixels + "px";
+    }
+</script>

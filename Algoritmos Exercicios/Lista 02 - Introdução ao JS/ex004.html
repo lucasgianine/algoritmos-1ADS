@@ -1,0 +1,51 @@
+<!-- 4. Crie uma página que solicite ao usuário que digite 
+o nome da rua/avenida/vila e o número da casa onde mora. 
+a) Deve haver um botão com o texto "Onde eu moro". 
+b) Ao clicar no botão, deve aparecer uma frase como esta na página: 
+"Seu logradouro é X" 
+c) Onde X é o valor que o usuário digitou no primeiro campo 
+d) Na sequência da mensagem acima deve aparecer: 
+"O número do seu logradouro é Y"  - Onde Y é o valor que o 
+usuário digitou no segundo campo -->
+
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4 - Algoritmos</title>
+</head>
+
+<body>
+    <h1>
+        SPTech Maps
+    </h1>
+
+    <h3>
+        Digite o nome da sua rua/avenida/vila:
+    </h3>
+    <input id="i_nomeRua" />
+
+    <h3>
+        Digite o número da sua casa:
+    </h3>
+    <input id="i_numCasa" />
+
+    <h3>
+        Bora saber onde mora?
+    </h3>
+    <button onclick="ondeMoro()">
+        Onde eu moro
+    </button>
+</body>
+
+</html>
+
+<script>
+    function ondeMoro() {
+        alert("Seu logradouro é: "+i_nomeRua.value
+        +", e o número do seu logradouro é: "+i_numCasa.value)
+        console.log("a) "+i_nomeRua.value,"b) "+i_numCasa.value)
+    }
+</script>

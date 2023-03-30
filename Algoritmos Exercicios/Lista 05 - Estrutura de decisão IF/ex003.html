@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3 (19) - if</title>
+</head>
+
+<style>
+    body {
+        background-color: azure;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div>
+        <h3>Informe sua primeira nota:</h3>
+        <input type="number" placeholder="Exemplo: 7" id="iptN1">
+
+        <h3>Informe sua segunda nota:</h3>
+        <input type="number" placeholder="Use . para números quebrados!" id="iptN2">
+
+        <h3>Informe sua terceira nota:</h3>
+        <input type="number" placeholder="Use . para números quebrados!" id="iptN3">
+        <br><br>
+
+        <button onclick="analisarDesempenho()">Analisar desempenho</button>
+    </div>
+
+    <div>
+        <img src="https://images.vexels.com/media/users/3/252016/isolated/preview/16524027ec6ed72507a50aada309252d-curso-de-cor-rosa-do-ca-rebro-humano.png" alt="Todos somos ótimos alunos!" width="100px">
+    </div>
+
+    <div id="divNota"></div>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!");
+
+    function analisarDesempenho() {
+        var N1 = Number(iptN1.value);
+        var N2 = Number(iptN2.value);
+        var N3 = Number(iptN3.value);
+
+        var Media = (N1 + N2 + N3) / 3;
+        
+        divNota.innerHTML = `Sua média foi de ${Media}<br>`;
+
+        if (Media > 9.4) {
+            divNota.innerHTML += `Parabéns, você é fora de série!`;
+        };
+        console.log("Média calculada!");
+    }
+</script>

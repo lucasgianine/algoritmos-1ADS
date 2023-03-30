@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3 (43) - else if</title>
+</head>
+<body>
+    Informe a temperatura: <input type="number" id="input_temperatura"> <br>
+
+    <button onclick="verificarTemperatura()">Verificar temperatura</button> <br>
+
+    <p id="p_mensagem"></p>
+</body>
+</html>
+
+<script>
+    function verificarTemperatura() {
+        var temperatura = Number(input_temperatura.value);
+
+        p_mensagem.innerHTML = `Para o ser humano, a temperatura é...<br>`;
+
+        if (temperatura < 14) {
+            p_mensagem.innerHTML += "Congelante!";
+        } else if (temperatura <= 21) {
+            p_mensagem.innerHTML += "Fria!";
+        } else if (temperatura <= 24) {
+            p_mensagem.innerHTML += "Confortável";
+        } else if (temperatura <= 31) {
+            p_mensagem.innerHTML += "Calor!";
+        } else {
+            p_mensagem.innerHTML += "Calor escaldante";
+        }
+    }
+</script>

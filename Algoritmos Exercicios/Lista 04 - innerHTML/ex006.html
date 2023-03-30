@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6 (13) | innerHTML</title>
+</head>
+
+<style>
+    #divPrimaria {
+        text-align: center;
+    }
+
+    #divPizza {
+        text-align: center;
+    }
+    #PizzaImg {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <div id="divPrimaria">
+        <h3>Digite o sabor da pizza:</h3>
+        <input id="i_sabor"><br>
+        
+        <h3>Digite o valor da pizza:</h3>
+        <input type="number" id="i_valor"><br>
+
+        <h3>Digite quantos amigos comerão a pizza:</h3>
+        <input type="number" id="i_qtdAmigos"><br>
+
+        <button onclick="verPizza()">Ver valor por amigo</button>
+    </div>
+
+    <div id="PizzaImg">
+        <img src="https://pizzariadahora.com.br/wp-content/uploads/2022/04/pizza.png" alt="Imagem de pizza para descontrair." width="150px">
+    </div>
+    
+    <div id="divPizza"></div>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!");
+
+    function verPizza() {
+        var Gorjeta = Number(i_valor.value) * 0.1;
+        var valorComGorjeta = Number(i_valor.value) + Gorjeta;
+        var Calculo = valorComGorjeta / Number(i_qtdAmigos.value);
+
+        var Texto = `Com os 10% (<b>R$${Gorjeta}</b>) de gorjeta já descontado pra cada.`
+
+        divPizza.innerHTML = `Cada amigo vai colaborar com <b>R$${Calculo}</b> para a pizza de <b>R$${Number(i_valor.value)}</b><br>` + Texto;
+
+        console.log("Calculado.")
+    }
+</script>

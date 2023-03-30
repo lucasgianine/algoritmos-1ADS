@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9 (16) | innerHTML</title>
+</head>
+
+<style>
+    #divPrimaria {
+        text-align: center;
+    }
+    #divIMC {
+        text-align: center;
+    }
+    #divImagem {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <div id="divImagem">
+        <img src="https://www.saudebemestar.pt/media/89347/obesidade.jpg" alt="" width="360px">
+    </div>
+
+    <div id="divPrimaria">
+        <h3>Informe seu peso (Kg):</h3>
+        <input type="number" id="ipt_peso"><br>
+
+        <h3>Informe sua altura:</h3>
+        <input type="number" id="ipt_altura"><br>
+
+        <button onclick="calcularIMC()">Calcular IMC</button>
+    </div>
+
+    <div id="divIMC"></div>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!");
+
+    function calcularIMC() {
+        var Peso = Number(ipt_peso.value);
+        var Altura = Number (ipt_altura.value);
+
+        var Calculo = Peso / (Altura * Altura);
+
+        var texto = `Seu índice de massa corporal é de <b>${Calculo}</b>.`;
+
+        divIMC.innerHTML = texto;
+        console.log("Calculo realizado!");
+    }
+</script>

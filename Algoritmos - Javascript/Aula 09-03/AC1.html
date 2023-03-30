@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Salário:
+    <input id="input_salario" /><br />
+    Adicional mensal:
+    <input id="input_adicional" /><br />
+    Bônus:
+    <input id="input_bonus" /><br />
+    <button onclick="analisar_renda()">Analisar Minha Renda</button>
+    <div id="div_resultado_analise"></div>
+  </body>
+</html>
+<script>
+  function analisar_renda() {
+    var salario = Number(input_salario.value);
+    var adicional = Number(input_adicional.value);
+    var bonus = Number(input_bonus.value);
+
+    var salarioBruto = salario + adicional + bonus;
+
+    var descontoIR = 0;
+    if (salarioBruto >= 10000) {
+      descontoIR = salarioBruto * 0.125;
+    }
+
+    var descontoINSS = (salarioBruto - descontoIR) * 0.1;
+
+    var descontoFGTS = (salarioBruto - descontoIR) * 0.08;
+
+    var salarioLiquido =
+      salarioBruto - descontoIR - descontoINSS - descontoFGTS;
+
+    div_resultado_analise.innerHTML = `
+            ANÁLISE DA SUA RENDA <br><br>
+            Com o salário de <b>R$${salario}</b>, com adicional de <b>R$${adicional}</b> e bônus de <b>R$${bonus}</b>, você tem: <br><br>
+            Bruto: <b>R$${salarioBruto}</b> <br>
+            IR: <b>R$${descontoIR}</b> <br>
+            INSS: <b>R$${descontoINSS}</b> <br>
+            FGTS: <b>R$${descontoFGTS}</b> <br>
+            Líquido: <b>R$${salarioLiquido}</b> <br>
+        `;
+
+    var recomendadoPoupar = salarioLiquido * 0.15;
+    var poupancaAno = recomendadoPoupar * 12;
+
+    if (salarioLiquido > 2500) {
+        div_resultado_analise.innerHTML += `
+            <br><br>
+            Com a renda de <b>R$${salarioLiquido}</b>, é recomendado poupar <b>R$${recomendadoPoupar}</b>, para que em um ano tenha poupado <b>R$${poupancaAno}</b>
+        `;
+    }
+
+  }
+</script>

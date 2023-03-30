@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Continuada 1</title>
+</head>
+<body>
+    Informe o valor do seu salário: <input type="number" id="input_salario"><br>
+    Informe o valor adicional mensal: <input type="number" id="input_adicional_mensal"><br>
+    Informe o bônus: <input type="number" id="input_bonus"><br>
+
+    <button onclick="analisarRenda()">Analisar Minha Renda</button>
+
+    <p id="p_resultado"></p>
+    
+</body>
+</html>
+
+<script>
+    function analisarRenda() {
+        var salario = Number(input_salario.value);
+        var adicional = Number(input_adicional_mensal.value);
+        var bonus = Number(input_bonus.value);
+
+        var salario_bruto = salario + adicional + bonus;
+        // Imposto de renda = 0 para que não apareça como "undefined".
+        var imposto_renda = 0;
+
+        // Somente se for maior que 10000 calcula o imposto de renda:
+        if(salario_bruto >= 10000) {
+            // Imposto de renda só vai valer quando o salário_bruto > 10000
+            var imposto_renda = salario_bruto * 12.5 / 100;
+        }
+        
+        var inss = salario_bruto * 10 / 100;
+        var fgts = salario_bruto * 8 / 100;
+        var salario_liquido = salario_bruto - inss - fgts;
+
+        p_resultado.innerHTML = `
+        <h2>ANÁLISE DA SUA RENDA</h2>
+        Com o salário de <b>R$${salario}</b>, com adicional de <b>R$${adicional}</b> e bônus de <b>R$${bonus}</b>, você tem:<br><br>
+
+        Bruto: <b>R$${salario_bruto}</b><br>
+        IR: <b>R$${imposto_renda}</b><br>
+        INSS: <b>R$${inss}</b><br>
+        FGTS: <b>R$${fgts}</b><br>
+        Líquido: <b>R$${salario_liquido}</b><br>`;
+
+        if(salario_liquido > 2500) {
+            var sl_poupado = salario_liquido * 15 / 100;
+
+            p_resultado.innerHTML += `
+            <br>Com a renda de <b>R$${salario_liquido}</b>, é recomendado poupar <b>R$${sl_poupado}</b>, para que em um ano tenha poupado <b>R$${sl_poupado * 12}</b>`; 
+        }
+    }
+</script>

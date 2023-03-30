@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4 (11) | innerHTML</title>
+</head>
+
+<style>
+    #principal {
+        text-align: center;
+    }
+    #div_eleicao {
+        text-align: center;
+    }
+    #imagemEleicao {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <div id="principal">
+        <h3 style="color: red;">Quantidade de votos do Candidato A:</h3>
+        <input type="number" id="ipt_votoA"><br>
+
+        <h3 style="color: blue;">Quantidade de votos do Candidato B:</h3>
+        <input type="number" id="ipt_votoB"><br>
+
+        <h3>Quantidade de votos Brancos:</h3>
+        <input type="number" id="ipt_votoBranco"><br>
+
+        <h3>Quantidade de votos Nulos:</h3>
+        <input type="number" id="ipt_votoNulo"><br>
+
+        <button onclick="resuladoEleicao()">Resultado da Eleição</button>
+    </div>
+
+    <div id="imagemEleicao">
+        <img src="http://www.cbiotec.ufpb.br/depbiotec/contents/noticias/convocacao-eleitoral-para-chefe-e-subchefe-do-departamento-de-biotecnologia/urnaeletronica.png/@@images/image.png" alt="Imagem de uma urna eletrônica." width="200px">
+    </div>
+
+    <div id="div_eleicao"></div>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!");
+
+    function resuladoEleicao() {
+        var VOTOS = Number(ipt_votoA.value) + Number(ipt_votoB.value) + Number(ipt_votoBranco.value) + Number(ipt_votoNulo.value);
+
+        var CandidatoA = Number(ipt_votoA.value) * 100 / VOTOS;
+        var CandidatoB = Number(ipt_votoB.value) * 100 / VOTOS;
+        var Invalidos = Number(ipt_votoBranco.value) + Number(ipt_votoNulo.value);
+        var invalidoPorcentagem = Number(ipt_votoBranco.value) + Number(ipt_votoNulo.value) * 100 / VOTOS;
+
+        var textoTotal = `A quantidade total de votos foi de <b>${VOTOS}</b>. Uau!<br>`;
+        var textoCandidatoA = `Os votos para o candidato A foram de <b>${CandidatoA}%</b>`;
+        var textoCandidatoB = `Os votos para o candidato B foram de <b>${CandidatoB}%</b> `;
+        var textoInvad = `Os votos inválidos foram de <b>${invalidoPorcentagem}% </b>`;
+
+        div_eleicao.innerHTML = textoTotal + textoCandidatoA + `(Total de <b>${ipt_votoA.value}</b> votos).<br>`
+        div_eleicao.innerHTML += textoCandidatoB + `(Total de <b>${ipt_votoB.value}</b> votos).<br>`;
+        div_eleicao.innerHTML += textoInvad + `(Total de <b>${Invalidos}</b> votos).`;
+
+        console.log("Conta realizada!");
+    }
+</script>

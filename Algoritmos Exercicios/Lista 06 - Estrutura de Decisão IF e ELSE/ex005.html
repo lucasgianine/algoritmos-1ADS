@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5 (34) - else</title>
+</head>
+<body>
+    Informe a nota 1: <input type="number" id="input_nota1"> <br>
+    Informe a nota 2: <input type="number" id="input_nota2"> <br>
+
+    <button onclick="verificarSituacao()">Verificar situação</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function verificarSituacao() {
+        var N1 = Number(input_nota1.value);
+        var N2 = Number(input_nota2.value);
+
+        var media = (N1 + N2) / 2;
+
+        if(media >= 6) {
+            alert("Parabéns, aprovado!");
+        } else {
+            alert("Tente outra vez...");
+        }
+    }
+</script>

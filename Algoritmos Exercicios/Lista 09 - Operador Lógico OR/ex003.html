@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3 (63) - OR ||</title>
+</head>
+<body>
+    Informe o valor da sua renda individual: <input type="number" id="input_renda_individual"> <br>
+    Informe o valor da sua renda familiar: <input type="number" id="input_renda_familiar"> <br>
+
+    <button onclick="analisar_renda()">Terei o benefício?</button>
+    <p id="p_mensagem"></p>
+</body>
+</html>
+
+<script>
+    function analisar_renda() {
+        var renda_individual = Number(input_renda_individual.value);
+        var renda_familiar = Number(input_renda_familiar.value);
+
+        if (renda_individual <= 2000 || renda_familiar <= 3000) {
+            p_mensagem.innerHTML = "Você terá direito ao auxílio";
+        } else {
+            p_mensagem.innerHTML = "Sem direito ao auxílio";
+        }
+    }
+</script>

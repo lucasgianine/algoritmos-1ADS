@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else IF</title>
+</head>
+<body>
+    Temperatura: <input type="number">
+
+    <button onclick="verificarTemperatura()">Verificar temperatura</button>
+</body>
+</html>
+
+<script>
+    function verificarTemperatura() {
+        var temperatura = Number(input_temperatura.value);
+
+        if (temperatura < 5) {
+            alert("Temperatura congelante");
+        } else if (temperatura < 10) {
+            alert("Temperatura fria");
+        } else if (temperatura <= 20) {
+            alert("Temperatura está ideal");
+        } else {
+            alert("Temperatura está muito alta!");
+        }
+    }
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6 (22) - if</title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <div>
+        <h3>Informe o valor de sua renda familiar:</h3>
+        <input type="number" placeholder="EX: 2000" id="iptRendaFamiliar"><br>
+
+        <h3>Informe o valor da prestação:</h3>
+        <input type="number" placeholder="EX: 1000" id="iptPrestacao"><br>
+
+        <button onclick="verificarFinanciamento()">Verificar financiamento</button>
+    </div>
+
+    <div id="divFinanciamento"></div>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!");
+
+    function verificarFinanciamento() {
+        var RendaFamiliar = Number(iptRendaFamiliar.value);
+        var Prestacao = Number(iptPrestacao.value);
+        
+        var Financiamento = (Prestacao / RendaFamiliar) * 100;
+
+        divFinanciamento.innerHTML = `A prestação corresponde a ${Financiamento}% da renda familiar.<br>`;
+
+        if (Financiamento > 30) {
+            divFinanciamento.innerHTML += `<b style="color: red;">Será necessário complementar a renda familiar.</b>`;
+            // .fontcolor('red')
+        }
+    }
+</script>

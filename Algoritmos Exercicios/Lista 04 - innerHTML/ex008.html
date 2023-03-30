@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8 (15) | innerHTML</title>
+</head>
+
+<style>
+    #divPrimaria {
+        text-align: center;
+    }
+    #divSayajin {
+        text-align: center;
+    }
+    #divImg {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <div id="divImg">
+        <img src="https://i.pinimg.com/originals/15/ef/be/15efbe15b48f2c703a87f606bef299e9.jpg" alt="SSJ1, SSJ2, SSJ3" width="300px">
+    </div>
+    
+    <div id="divPrimaria">
+        <h3>Digite o seu "ki base":</h3>
+        <input type="number" id="ipt_kiBase"><br>
+
+        <h3>Transformar em...</h3><br>
+        <button onclick="virarSSJ()">SSJ</button>
+        <button onclick="virarSSJ2()">SSJ 2</button>
+        <button onclick="virarSSJ3()">SSJ 3</button><br>
+    </div>
+
+    <div id="divSayajin"></div>
+</body>
+</html>
+
+<script>
+    console.log("Funcionando!");
+
+    function virarSSJ() {
+        var kiBase = Number(ipt_kiBase.value);
+        var SSJ1 = kiBase * 50;
+
+        var textoSSJ1 = `Após se transformar em <b>SSJ</b>, o ki desse Sayajin passa a ser de <b>${SSJ1}</b>!<br>`;
+
+        divSayajin.innerHTML = textoSSJ1;
+        console.log("SSJ funcionando!");
+    }
+
+    function virarSSJ2() {
+        var kiBase = Number(ipt_kiBase.value);
+        var SSJ2 = kiBase * 100;
+
+        var textoSSJ2 = `Após se transformar em <b>SSJ2</b>, o ki desse Sayajin passa a ser de <b>${SSJ2}</b>!!<br>`;
+
+        divSayajin.innerHTML = textoSSJ2;
+        console.log("SSJ2 funcionando!");
+    }
+
+    function virarSSJ3() {
+        var kiBase = Number(ipt_kiBase.value);
+        var SSJ3 = kiBase * 200;
+
+        var textoSSJ3 = `Após se transformar em <b>SSJ3</b>, o ki desse Sayajin passa a ser de <b>${SSJ3}!!!</b><br>`;
+
+        divSayajin.innerHTML = textoSSJ3;
+        console.log("SSJ3 funcionando!");
+        // Daria para usar o += nas div do SSJ2 e SSJ3, mas isso poderia quebrar o código deixando fácil de spammar os textos, então decidi deixar apenas com =
+    }
+</script>
