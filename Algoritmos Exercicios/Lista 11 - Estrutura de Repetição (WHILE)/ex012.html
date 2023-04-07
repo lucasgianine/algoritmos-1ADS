@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12 (85) - While</title>
+</head>
+
+<body>
+    De 2 ao 10, Informe em números: <br>
+    Qual tabuada você quer ver na tela: <input type="number" min="2" max="9" id="input_primeiro_numero_tabuada"> <br>
+    Até qual número você quer que vá: <input type="number" min="2" id="input_segundo_numero_tabuada"> <br>
+
+    <button onclick="ver_tabuada()">Ver Tabuada</button>
+    <div id="div_ver_tabuada"></div>
+</body>
+
+</html>
+
+<script>
+    function ver_tabuada() {
+        var tabuada_i = Number(input_primeiro_numero_tabuada.value);
+        var tabuada_f = Number(input_segundo_numero_tabuada.value);
+        var contador = 1;
+
+        div_ver_tabuada.innerHTML = "";
+
+        if (tabuada_i >= 2 && tabuada_f <= 9) {
+            while (contador < tabuada_f) {
+                contador++;
+                if (contador % 2 == 0) {
+                    div_ver_tabuada.innerHTML += `<div style="color: blue;">${tabuada_i} x ${contador} = ${tabuada_i * contador}</div>`;
+                } else if (contador % 1 == 0) {
+                    div_ver_tabuada.innerHTML += `<div style="color: red;">${tabuada_i} x ${contador} = ${tabuada_i * contador}</div>`;
+                }
+            }
+        }
+    }
+</script>

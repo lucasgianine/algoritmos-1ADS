@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7 (80) - While</title>
+</head>
+
+<body>
+    Informe um número: <input type="number" min="20" max="100" id="input_numero"> <br>
+    <button onclick="multiploCinco()">Adoro múltiplos de 5</button>
+
+    <div id="div_multiplo5"></div>
+</body>
+
+</html>
+
+<script>
+    function multiploCinco() {
+        var contador = 1;
+        var numero = Number(input_numero.value);
+
+        div_multiplo5.innerHTML = "";
+
+        // if (numero % 5 == 0) {
+        //     while (contador < numero) {
+        //         div_multiplo5.innerHTML += `${contador} <br>`;
+        //         contador += 5;
+        //         if (contador == numero) {
+        //             div_multiplo5.innerHTML += `<b>${numero}</b>`;
+        //         }
+        //     }
+        // } else {
+        //     div_multiplo5.innerHTML = `O número ${numero} não é múltiplo de 5.`
+        // }
+
+        // if (numero >= 20 && numero <= 100) {
+        //     while (contador <= numero) {
+        //         if (contador % 5 == 0) {
+        //             div_multiplo5.innerHTML += `${contador} <br>`;
+        //         }
+        //         contador++;
+        //     }
+        // }
+
+        if (numero < 20 || numero > 100) {
+            alert("Número inválido.");
+        } else {
+            while (contador <= numero) {
+                if (contador % 5 == 0) {
+                    div_multiplo5.innerHTML += `${contador} <br>`;
+                }
+                contador++;
+            }
+        }
+    }
+</script>

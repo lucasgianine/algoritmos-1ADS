@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Início do intervalo:
+    <input id="input_inicio"><br>
+    Fim do intervalo:
+    <input id="input_fim"><br>
+    <button onclick="ver_pares_no_intervalo()">
+        S2 Pares
+    </button>
+    <div id="div_pares"></div>
+</body>
+</html>
+<script>
+    function ver_pares_no_intervalo() {
+        var inicio = Number(input_inicio.value);
+        var fim = Number(input_fim.value);
+
+        while (inicio <= fim) {
+            if (inicio % 2 == 0) {
+                div_pares.innerHTML += `${inicio} <br>`;
+            }
+            inicio += 1;
+        }
+    }
+</script>

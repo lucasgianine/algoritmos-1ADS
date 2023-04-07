@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5 (78) - While</title>
+</head>
+<body>
+    <button onclick="numCabalistico()">Números cabalísticos</button>
+    <div id="div_numeros"></div>
+</body>
+</html>
+
+<script>
+    function numCabalistico() {
+        var contador = 1;
+        
+        div_numeros.innerHTML = "";
+        
+        while (contador <= 30) {
+            if(contador != 3 && contador != 4 && contador != 7 && contador != 10 && contador != 12) {
+                div_numeros.innerHTML += `${contador} <br>`;
+            }
+            contador++;
+        }
+
+    }
+</script>

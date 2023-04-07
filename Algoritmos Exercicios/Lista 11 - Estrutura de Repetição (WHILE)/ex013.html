@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13 (86) - While</title>
+</head>
+
+<body>
+    De quantos em quantos dias você faz musculação: <input type="number" id="input_dias_musculacao"> <br>
+
+    <button onclick="rotina_mensal()">Exibir rotina mensal</button>
+    <div id="div_rotina"></div>
+</body>
+
+</html>
+
+<script>
+    function rotina_mensal() {
+        var dias = Number(input_dias_musculacao.value);
+        var contador = 1;
+
+        if (dias % 1 == 0 && dias < 9) {
+            while (contador < 30) {
+                if (contador > dias) {
+                    div_rotina.innerHTML += `Dia ${contador} - Musculação. <br>`;
+                } else {
+                    div_rotina.innerHTML += `Dia ${contador} - Comer e dormir. <br>`;
+                }
+                contador++;
+            }
+        } else {
+            alert("Informe um número inteiro.");
+        }
+    }
+</script>

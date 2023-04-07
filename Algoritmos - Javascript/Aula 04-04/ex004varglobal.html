@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correção</title>
+</head>
+<body>
+    <button onclick="andarEsquerda()">Andar p/ esquerda</button>
+    <button onclick="andarDireita()">Andar p/ direita</button>
+    <input type="number" id="ipt_pixels" placeholder="Insira a quantidade de pixels">
+
+    <div>
+        <img id="img_bart" src="./bart_skate.png" style="width: 150px;">
+    </div>
+</body>
+</html>
+
+<script>
+    var margem_esquerda = 0; 
+    function andarEsquerda(){
+        var qtd_pixels = Number(ipt_pixels.value);
+        margem_esquerda -= qtd_pixels;
+
+        img_bart.style.marginLeft = `${margem_esquerda}px`;
+    }
+    function andarDireita(){
+        var qtd_pixels = Number(ipt_pixels.value);
+        margem_esquerda += qtd_pixels;
+
+        img_bart.style.marginLeft = `${margem_esquerda}px`;
+    }
+
+</script>

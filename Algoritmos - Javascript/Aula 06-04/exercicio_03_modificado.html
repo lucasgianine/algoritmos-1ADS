@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Frase: <input id="input_frase" />
+    <button onclick="repetir_frase()">
+      Diga algo sobre a matéria de Algoritmos
+    </button>
+    <div id="div_frases"></div>
+  </body>
+</html>
+<script>
+  function repetir_frase() {
+    var frase = input_frase.value;
+    
+    div_frases.innerHTML = "";
+    
+    var contador = 1;
+    while (contador <= 7) {
+      div_frases.innerHTML += `${contador}. ${frase}<br>`;
+      contador += 1;
+    }
+  }
+</script>
