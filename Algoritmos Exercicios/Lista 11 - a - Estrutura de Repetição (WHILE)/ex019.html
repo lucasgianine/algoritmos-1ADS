@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18 (94) - While (2/2)</title>
+</head>
+<body>
+    Informe quantas xícaras (de café com leite) já tomou na vida: <br>
+    <input type="number" id="input_qtd_xicaras"> <br>
+
+    <button onclick="ver_quantidade()">Ver a quantidade</button>
+    <div id="div_xicaras"></div>
+</body>
+</html>
+
+<script>
+    function ver_quantidade() {
+        var xicaras = Number(input_qtd_xicaras.value);
+
+        var contador = 1;
+        while (contador <= xicaras) {
+            div_xicaras.innerHTML += `${xicaras } colheres de leite<br>
+            ${} colheres de café em pó<br>
+            ${}`
+        }
+    }
+</script>
+
+b) Ao clicar em "Ver a quantidade", devem aparecer na tela X colheres com leite em pó e Y colheres de café em pó. Para cada xícara de café com leite informada em a) considere que o usuário usa 1 colher de leite e 2 de café. Assim você saberá os valores de X e Y. 

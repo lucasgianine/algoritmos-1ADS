@@ -22,13 +22,19 @@
         var dias = Number(input_dias_musculacao.value);
         var contador = 1;
 
-        if (dias % 1 == 0 && dias < 9) {
+        div_rotina.innerHTML = "";
+
+        if (dias % 1 == 0 && dias <= 9) {
             while (contador < 30) {
-                if (contador > dias) {
+                if (contador == 1) {
                     div_rotina.innerHTML += `Dia ${contador} - Musculação. <br>`;
-                } else {
+                }
+                else if (contador < dias) {
                     div_rotina.innerHTML += `Dia ${contador} - Comer e dormir. <br>`;
                 }
+                else if ( == dias){
+                    div_rotina.innerHTML += `Dia ${contador} - Musculação. <br>`;
+                } 
                 contador++;
             }
         } else {

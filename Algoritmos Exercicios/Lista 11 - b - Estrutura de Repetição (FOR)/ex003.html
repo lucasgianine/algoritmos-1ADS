@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3 (88) - For</title>
+</head>
+<body>
+    EX01- Refazendo EX003 da lista 11 com FOR <br>
+    <input id="ipt_mensagem" placeholder="Escreva qualquer coisa!"> <br>
+    <button onclick="repetir()">Repetir</button>
+
+    <div id="div_mensagens"></div>
+</body>
+</html>
+
+<script>
+    function repetir() {
+        var frase = ipt_mensagem.value;
+
+        div_mensagens.innerHTML = "";
+
+        for(var i = 1; i <= 7; i++) {
+            div_mensagens.innerHTML += `${i}. ${frase} <br>`;
+        }
+    }
+</script>

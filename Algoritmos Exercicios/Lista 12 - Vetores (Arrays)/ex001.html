@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 (91) - Arrays</title>
+</head>
+<body>
+    <input placeholder="Digite qualquer fruta" id="input_fruta"> <br>
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="div_frutas"></div>
+</body>
+</html>
+
+<script>
+    var frutas = ["uva", "manga", "abacaxi", "morango", "pêra", "banana", "amora"];
+
+    function pesquisar() {
+        var fruta = input_fruta.value;
+
+        div_frutas.innerHTML = "";
+
+        if (fruta.toLowerCase() == frutas[0] || fruta.toLowerCase() == frutas[1] || fruta.toLowerCase() == frutas[2] || fruta.toLowerCase() == frutas[3] || fruta.toLowerCase() == frutas[4] || fruta.toLowerCase() == frutas[5] || fruta.toLowerCase() == frutas[6]) {
+            div_frutas.innerHTML += `A fruta ${fruta} existe na lista.`;
+        } else {
+            div_frutas.innerHTML += `Não existe a fruta ${fruta} na lista.`;
+        }
+    }
+</script>

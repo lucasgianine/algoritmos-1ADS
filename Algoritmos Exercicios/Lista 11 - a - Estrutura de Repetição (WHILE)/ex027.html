@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe um número limite da contagem: <input type="number" id="input_limite_contagem"> <br>    Informe um número para testar a divisibilidade: (entre 1 e o primeiro numero): <input type="number" id="input_divisivel"> <br>
+
+    <button onclick="somar_numeros()">Somar Números</button>
+    <div id="div_num_somados"></div>
+</body>
+</html>
+
+<script>
+    function somar_numeros() {
+        var numLimite = Number(input_limite_contagem.value);
+        var numDivisivel = Number(input_divisivel.value);
+
+        if (numDivisivel < 1 || numDivisivel > numLimite) {
+            alert("Informe um número válido.");
+        } else {
+            var somaMult = 0;
+            var contador = 1;
+            while (contador <= numLimite) {
+                if (contador % numDivisivel == 0) {
+                    div_num_somados.innerHTML += `${contador}<br>`;
+                    somaMult += contador;
+                }
+                contador++
+            }
+            div_num_somados.innerHTML += `Soma dos Múltiplos: ${somaMult}`;
+        }
+    }
+</script>

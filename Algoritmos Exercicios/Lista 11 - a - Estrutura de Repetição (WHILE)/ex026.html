@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Informe um número: <input type="number" id="input_numero"> <br>
+
+    <button onclick="somar_pares()">Somar Pares</button>
+    <div id="div_pares"></div>
+</body>
+
+</html>
+
+<script>
+    function somar_pares() {
+        var numero = Number(input_numero.value);
+
+        div_pares.innerHTML = "";
+
+        if (numero < 10 || numero > 500) {
+            alert("Informe um número entre 10 ao 500.");
+        } else {
+            var contador = 1;
+            var somaPares = 0;
+            while (contador <= numero) {
+                if (contador == 1) {
+                    div_pares.innerHTML += `${contador}<br>`;
+                }
+                else if (contador % 2 == 0) {
+                    div_pares.innerHTML += `${contador}<br>`
+                    somaPares += contador;
+                }
+                contador++;
+            }
+
+            div_pares.innerHTML += `Soma dos pares: ${somaPares} (Não contando o 1).`;
+        }
+    }
+</script>

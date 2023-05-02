@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16 (92) - While (2/2)</title>
+</head>
+<body>
+    Informe quantas pessoas entrarão no carro: <input type="number" id="input_passageiros"> <br>
+
+    <button onclick="partiu_carona()">#PartiuCarona</button>
+    <div id="div_carona"></div>
+</body>
+</html>
+
+<script>
+    function partiu_carona() {
+        var passageiros = Number(input_passageiros.value);
+        
+        div_carona.innerHTML = "";
+
+        var contagem = 1;
+        while (contagem <= passageiros) {
+            if (contagem == 1) {
+                div_carona.innerHTML += `Entrou o ${contagem}º (que é o(a) motorista) <br>`;
+            }
+            else if (contagem < 6) {
+                div_carona.innerHTML += `Entrou o ${contagem}º passageiro <br>`;
+            } else {
+                div_carona.innerHTML += `O ${contagem}º passageiro terá que esperar!<br>`;
+            }
+
+            contagem++;
+        }
+    }
+</script>
+
+ 

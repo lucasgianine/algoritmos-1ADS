@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercício 10 (83) - While</title>
+    <title>Exercício 10 (90) - For</title>
 </head>
 <body>
+    EX01- Refazendo EX003 da lista 11 com FOR <br>
     Informe um número inicial: <input type="number" id="input_numero_inicial"> <br>
     Informe um número final: <input type="number" id="input_numero_final"> <br>
     <button onclick="s2_pares()">S2 Pares</button>
@@ -19,15 +20,13 @@
     function s2_pares() {
         var inicio = Number(input_numero_inicial.value);
         var final = Number(input_numero_final.value);
-        var contador = 1;
 
         div_pares.innerHTML = "";
 
-        while(contador <= final) {
-            if(contador >= inicio && contador % 2 == 0) {
-                div_pares.innerHTML += `${contador} <br>`;
+        for(var i = inicio; i <= final; i++) {
+            if(i % 2 == 0) {
+                div_pares.innerHTML += `${i} <br>`;
             }
-            contador++;
         }
     }
 </script>

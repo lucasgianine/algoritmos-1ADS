@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8 (89) - For</title>
+</head>
+
+<body>
+    EX02- Refazendo EX008 da lista 11 com FOR <br>
+    Informe um número: <input type="number" min="20" max="200" id="input_numero"> <br>
+    <button onclick="multiplo_de_sete()">Viva o 7!</button>
+
+    <div id="div_sete"></div>
+</body>
+
+</html>
+
+<script>
+    function multiplo_de_sete() {
+        var numero = Number(input_numero.value);
+
+        div_sete.innerHTML = "";
+
+        if (numero <= 200) {
+            for(var i = 1; i <= numero; i++) {
+                if (i % 7 == 0) {
+                    div_sete.innerHTML += `${i} <br>`;
+                }
+            }
+        }
+    }
+</script>

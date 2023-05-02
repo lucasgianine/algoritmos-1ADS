@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18 (94) - While (2/2)</title>
+</head>
+<body>
+    Informe quantas Coca-Cola você já bebeu na vida: <input type="number" id="input_cocacola"> <br>
+
+    <button onclick="ver_quantidade()">Ver a quantidade</button>
+    <div id="div_cocacola"></div>
+</body>
+</html>
+
+<script>
+    function ver_quantidade() {
+        var cocacola = Number(input_cocacola.value);
+
+        div_cocacola.innerHTML = "";
+
+        var contador = 1;
+        while (contador <= cocacola) {
+            div_cocacola.innerHTML += `<img src="https://hiperfarmac.com.br/BACKOFFICE/Uploads/Produto/Normal/7894900700015.png" width="90px">`;
+
+            contador++;
+        }
+    }
+</script>

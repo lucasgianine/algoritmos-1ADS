@@ -28,13 +28,13 @@
         div_ver_tabuada.innerHTML = "";
 
         if (tabuada_i >= 2 && tabuada_f <= 9) {
-            while (contador < tabuada_f) {
-                contador++;
-                if (contador % 2 == 0) {
-                    div_ver_tabuada.innerHTML += `<div style="color: blue;">${tabuada_i} x ${contador} = ${tabuada_i * contador}</div>`;
-                } else if (contador % 1 == 0) {
+            while (contador <= tabuada_f) {
+                if (contador % 2 == 1) {
                     div_ver_tabuada.innerHTML += `<div style="color: red;">${tabuada_i} x ${contador} = ${tabuada_i * contador}</div>`;
+                } else {
+                    div_ver_tabuada.innerHTML += `<div style="color: blue;">${tabuada_i} x ${contador} = ${tabuada_i * contador}</div>`;
                 }
+                contador++;
             }
         }
     }
