@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Informe a quantidade de doces a ser vendido!</h1><br>
+    Macarons: <input type="number" id="input_macarons"><br>
+    Brigadeiros Gourmets: <input type="number" id="input_brigadeiros_gourmet"><br>
+    Cupcakes: <input type="number" id="input_cupcakes"><br>
+    Cheesecakes: <input type="number" id="input_cheesecakes"><br>
+
+    <h1>Informe o preço unitário de cada tipo de doce!</h1><br>
+    Macarons R$: <input type="number" id="input_preco_unitario_macarons"><br>
+    Brigadeiros Gourmets R$: <input type="number" id="input_preco_unitario_brigadeiros_gourmet"><br>
+    Cupcakes R$: <input type="number" id="input_preco_unitario_cupcakes"><br>
+    Cheesecakes R$: <input type="number" id="input_preco_unitario_cheesecakes"><br>
+
+    <button onclick="verificar_vendas()">Verificar Vendas</button>
+    <br><br>
+    <div id="div_doces"></div>
+
+</body>
+
+</html>
+
+<script>
+    function verificar_vendas() {
+        var qtd_macarons = Number(input_macarons.value);
+        var qtd_brigadeiro_gourmet = Number(input_brigadeiros_gourmet.value);
+        var qtd_cupcakes = Number(input_cupcakes.value);
+        var qtd_cheesecakes = Number(input_cheesecakes.value);
+
+        var valor_macarons = Number(input_preco_unitario_macarons.value);
+        var valor_brigadeiro_gourmet = Number(input_preco_unitario_brigadeiros_gourmet.value);
+        var valor_cupcakes = Number(input_preco_unitario_cupcakes.value);
+        var valor_cheesecakes = Number(input_preco_unitario_cheesecakes.value);
+
+        var qtdTotal = qtd_macarons + qtd_cupcakes + qtd_brigadeiro_gourmet + qtd_cheesecakes;
+
+        var valorTotal = (qtd_macarons * valor_macarons) + (qtd_brigadeiro_gourmet * valor_brigadeiro_gourmet) + (qtd_cupcakes * valor_cupcakes) + (qtd_cheesecakes * valor_cheesecakes);
+
+        div_doces.innerHTML = "";
+
+        if (qtd_macarons < 0 || qtd_brigadeiro_gourmet < 0 || qtd_cupcakes < 0 || qtd_cheesecakes < 0 || valor_macarons < 0 || valor_brigadeiro_gourmet < 0 || valor_cupcakes < 0 || valor_cheesecakes < 0) {
+            alert("Insira um valor a partir de 0.");
+        } else {
+            var macaronImagem = `<img src="https://pngimg.com/d/macaron_PNG86.png" width="30px">`;
+            var brigadeiroImagem = `<img src="https://static.wixstatic.com/media/1b742c_4495d62304da4e7889e7ba8e75c9e69b~mv2.png/v1/fill/w_278,h_278,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/1b742c_4495d62304da4e7889e7ba8e75c9e69b~mv2.png" width="17px">`;
+            var cupcakeImagem = `<img src="https://www.pngall.com/wp-content/uploads/5/Cupcake-PNG-Image-HD.png" width=17px">`;
+            var cheesecakeImagem = `<img src="https://www.pngall.com/wp-content/uploads/5/Cheesecake-Slice-PNG-Images.png" width="30px">`;
+
+            var numVenda = 1;
+            while (numVenda <= qtdTotal) {
+                var contador = 1;
+                while (contador <= qtd_macarons) {
+                    div_doces.innerHTML += `Venda ${numVenda} - ${macaronImagem} - R$${valor_macarons}<br>`;
+
+                    contador++;
+                    numVenda++;
+                }
+                contador = 1
+                while (contador <= qtd_brigadeiro_gourmet) {
+                    div_doces.innerHTML += `Venda ${numVenda} - ${brigadeiroImagem} - R$${valor_brigadeiro_gourmet}<br>`;
+
+                    contador++;
+                    numVenda++;
+                }
+                contador = 1
+                while (contador <= qtd_cupcakes) {
+                    div_doces.innerHTML += `Venda ${numVenda} - ${cupcakeImagem} - R$${valor_cupcakes}<br>`;
+
+                    contador++;
+                    numVenda++;
+                }
+                contador = 1
+                while (contador <= qtd_cheesecakes) {
+                    div_doces.innerHTML += `Venda ${numVenda} - ${cheesecakeImagem} - R$${valor_cheesecakes}<br>`;
+
+                    contador++;
+                    numVenda++;
+                }
+
+                div_doces.innerHTML += `Com a quantidade de ${qtd_macarons} Macarons, ${qtd_brigadeiro_gourmet} Brigadeiros, ${qtd_cupcakes} Cupcakes e ${qtd_cheesecakes} Cheesecakes, a venda totalizará R${valorTotal.toFixed(2)}`;
+            }
+        }
+    }
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JSON</h1>
+    <p>JavaScript Object Notation</p>
+    <p>Anotações de/para Objetos JavaScript</p>
+
+    <button onclick="analisar()">Analisar JSON</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function analisar () {
+        var pessoa  =  {
+            nome: "Fulano", 
+            sobrenome: "de Tal",
+            nascimento: 1990,
+            endereco: {
+                logradouro: "Rua Haddock Lobo",
+                numero: "595"
+            }
+        }
+
+        console.log(pessoa);
+
+        div_mensagem.innerHTML = `  
+            Nome Completo: ${pessoa.nome} ${pessoa.sobrenome} <br>
+            Idade: ${2023 - pessoa.nascimento} <br>
+            Endereço: ${pessoa.endereco.logradouro}, ${pessoa.endereco.numero}
+        `;
+
+    }
+</script>

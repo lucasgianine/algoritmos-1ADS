@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      img {
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    Quantidade Macaron: <input id="input_qtd_macaron" /> <br />
+    Quantidade Brigadeiro: <input id="input_qtd_brigadeiro" /> <br />
+    Quantidade Cupcakes: <input id="input_qtd_cupcake" /> <br />
+    Quantidade Cheesecake: <input id="input_qtd_cheesecake" /> <br />
+
+    Preço Macaron: <input id="input_preco_macaron" /> <br />
+    Preço Brigadeiro: <input id="input_preco_brigadeiro" /> <br />
+    Preço Cupcakes: <input id="input_preco_cupcake" /> <br />
+    Preço Cheesecake: <input id="input_preco_cheesecake" /> <br />
+
+    <button onclick="verificar()">Verificar Vendas</button>
+
+    <div id="div_doces"></div>
+  </body>
+</html>
+
+<script>
+  function verificar() {
+    var qtd_macaron = Number(input_qtd_macaron.value);
+    var qtd_brigadeiro = Number(input_qtd_brigadeiro.value);
+    var qtd_cupcake = Number(input_qtd_cupcake.value);
+    var qtd_cheesecake = Number(input_qtd_cheesecake.value);
+
+    var preco_macaron = Number(input_preco_macaron.value);
+    var preco_brigadeiro = Number(input_preco_brigadeiro.value);
+    var preco_cupcake = Number(input_preco_cupcake.value);
+    var preco_cheesecake = Number(input_preco_cheesecake.value);
+
+    var total = 0;
+
+    if (
+        input_qtd_macaron.value == "" ||
+        input_qtd_brigadeiro.value == "" ||
+        input_qtd_cupcake.value == "" ||
+        input_qtd_cheesecake.value == "" ||
+        input_preco_macaron.value == "" ||
+        input_preco_brigadeiro.value == "" ||
+        input_preco_cupcake.value == "" ||
+        input_preco_cheesecake.value == "" ||
+      qtd_macaron < 0 ||
+      qtd_brigadeiro < 0 ||
+      qtd_cheesecake < 0 ||
+      qtd_cupcake < 0 ||
+      preco_macaron < 0 ||
+      preco_brigadeiro < 0 ||
+      preco_cheesecake < 0 ||
+      preco_cupcake < 0
+    ) {
+      alert("Preencha os campos com valores positivos");
+    } else {
+      for (var contador = 1; contador <= qtd_macaron; contador++) {
+        div_doces.innerHTML += `<br>Venda ${contador} - <img src="https://st3.depositphotos.com/7247698/15136/i/1600/depositphotos_151364838-stock-photo-macaron-sweet-dessert-on-wood.jpg" /> - R$${preco_macaron}`;
+        total += preco_macaron;
+      }
+
+      for ( ; contador <= qtd_brigadeiro + qtd_macaron; contador++) {
+        div_doces.innerHTML += `<br>Venda ${contador} - <img src="https://cdn.panelinha.com.br/receita/958014000000-Brigadeiro.jpg" /> - R$${preco_brigadeiro}`;
+        total += preco_brigadeiro;
+      }
+
+      for ( ; contador <= qtd_cupcake + qtd_brigadeiro + qtd_macaron; contador++) {
+        div_doces.innerHTML += `<br>Venda ${contador} - <img src="https://d3ugyf2ht6aenh.cloudfront.net/stores/124/083/products/cupcakes-cupcakedecorado1-4a78e9cedf0a5c783816139237197788-640-0.jpg" /> - R$${preco_cupcake}`;
+        total += preco_cupcake;
+      }
+
+      for ( ; contador <= qtd_cheesecake + qtd_cupcake + qtd_brigadeiro + qtd_macaron; contador++) {
+        div_doces.innerHTML += `<br>Venda ${contador} - <img src="https://www.receitasnestle.com.br/sites/default/files/srh_recipes/8fafc3935c766bf8c9f1331a325e48a9.jpg" /> - R$${preco_cheesecake}`;
+        total += preco_cheesecake;
+      }
+
+      div_doces.innerHTML += `<br> Com a quantidade de ${qtd_macaron} Macarons, ${qtd_brigadeiro} Brigadeiros, ${qtd_cupcake} Cupcakes e ${qtd_cheesecake} Cheesecakes, a venda totalizará R$${total.toFixed(2)}`
+
+    }
+  }
+</script>

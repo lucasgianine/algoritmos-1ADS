@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo vetor</title>
+</head>
+<body>
+    Fruta: <input id="input_fruta"> <br>
+    <button onclick="adicionar()">Adicionar fruta</button>
+    <div id="div_frutas"></div>
+</body>
+</html>
+
+<script>
+    var frutas = []; // Usado para lista, o chamado VETOR
+    // var frutas = {} usado para JSON apenas
+
+    function adicionar() {
+        var fruta = input_fruta.value;
+        frutas.push(fruta);
+        div_frutas.innerHTML = `
+        <b>Frutas:</b> ${frutas} <br>
+        <b>Primeira:</b> ${frutas[0]} <br>
+        <b>Última:</b> ${frutas[frutas.length - 1]} <br>`
+    }
+</script>

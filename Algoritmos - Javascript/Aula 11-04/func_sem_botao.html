@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamando a função sem botão</title>
+</head>
+<body>
+    Quantidade de passos: <input
+    oninput="exibir()"
+    id="input_passos">
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function exibir() {
+        var passos = Number(input_passos.value);
+
+        div_mensagem.innerHTML = "";
+        
+        var contador = 0;
+
+        while (contador < passos) {
+            contador++;
+            div_mensagem.innerHTML += `Dando o ${contador}º passo<br>`;
+        }
+
+        div_mensagem.innerHTML += "Você terminou sua caminhada";
+    }
+</script>

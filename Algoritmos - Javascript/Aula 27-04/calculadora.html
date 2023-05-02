@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    N1: <input id="input_n1" /><br />
+    N2: <input id="input_n2" /><br />
+    <button onclick="ver_operacoes()">Ver Operações</button>
+    <div id="div_resultado"></div>
+  </body>
+</html>
+<script>
+  function soma(primeiroValor, segundoValor) {
+    var resultado = primeiroValor + segundoValor;
+    exibir_resultado(
+        resultado,
+        "soma",
+        primeiroValor,
+        segundoValor
+    );
+  }
+
+  function subtrair(primeiroValor, segundoValor) {
+    var resultado = primeiroValor - segundoValor;
+    exibir_resultado(
+        resultado,
+        "subtração",
+        primeiroValor,
+        segundoValor
+    );
+  }
+
+  function dividir(primeiroValor, segundoValor) {
+    var resultado = primeiroValor / segundoValor;
+    exibir_resultado(
+        resultado, 
+        "divisão",
+        primeiroValor,
+        segundoValor
+    );
+  }
+
+  function multiplicar(primeiroValor, segundoValor) {
+    var resultado = primeiroValor * segundoValor;
+    exibir_resultado(
+        resultado, 
+        "multiplicacao", 
+        primeiroValor, 
+        segundoValor
+    );
+  }
+
+  function exibir_resultado(resultado, operacao, n1, n2) {
+    div_resultado.innerHTML += `
+        <b>
+            A ${operacao} entre ${n1} e ${n2} é: ${resultado}
+        </b>
+        <br>`;
+  }
+
+  function ver_operacoes() {
+    var n1 = Number(input_n1.value);
+    var n2 = Number(input_n2.value);
+
+    soma(n1, n2);
+    multiplicar(n1, n2);
+    subtrair(n1, n2);
+    dividir(n1, n2);
+  }
+</script>

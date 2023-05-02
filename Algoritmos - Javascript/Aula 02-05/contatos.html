@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Contato</h2>
+    Nome: <input id="input_nome"> <br>
+    Email: <input id="input_email"> <br>
+    Telefone: <input id="input_telefone"> <br>
+
+    <button onclick="cadastrar()">Cadastrar-se</button>
+    <div id="div_contatos"></div>
+</body>
+
+</html>
+
+<script>
+    var lista_contatos = [];
+
+    function cadastrar() {
+        var nome = input_nome.value;
+        var email = input_email.value;
+        var telefone = input_telefone.value;
+
+        var contato = {
+            nome,
+            email,
+            telefone
+        }
+
+        div_contatos.innerHTML = "<h3>Novo contato adicionado!</h3>";
+
+        lista_contatos.push(contato);
+
+        for (var i = 0; i < lista_contatos.length; i++) {
+            var contato_atual = lista_contatos[i];
+
+            div_contatos.innerHTML += `Nome: ${contato_atual.nome} - E-mail: ${contato_atual.email} - Telefone: ${contato_atual.telefone} <br>`;
+        }
+
+    }
+</script>

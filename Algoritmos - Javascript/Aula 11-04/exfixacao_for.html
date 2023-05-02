@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Depósitos: <input type="number" id="input_deposito_bancario"> <br>
+    Valor do depósito: <input type="number" id="input_valor_depositado"> <br>
+    <button onclick="acompanhar_grana()">Acompanhar Grana</button>
+    <div id="div_historico"></div>
+</body>
+</html>
+
+<script>
+    function acompanhar_grana() {
+        var deposito = Number(input_deposito_bancario.value);
+        var valor = Number(input_valor_depositado.value);
+
+        var valor_final = 0;
+
+        div_historico.innerHTML = "";
+        
+        for (var i = 1; i <= deposito; i++){
+            valor_final += valor;
+            div_historico.innerHTML += `${i}º Mês: R$${valor_final.toFixed(2)}<br>`;
+        }
+
+        div_historico.innerHTML += `Total guardado: <b>R$${valor_final}</b>`;
+    }
+</script>
